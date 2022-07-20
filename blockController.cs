@@ -25,20 +25,6 @@ public class blockController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         changeblock = GetComponent<ChangeBlock>();
     }
 
-    //// object 터치하는 순간 1회 호출(IPointerDownHandler)
-    // public void OnPointerDown(PointerEventData eventData){
-
-    // }
-
-    // //object를 떼는 순간 1회 호출(IPointerUpHandler)
-    // public void OnPointerUp(PointerEventData eventData){
-    // }
-
-    // //object 터치했다 떼는 순간 1회 호출(IPointerClickHandler)
-    // public void OnPointerClick(PointerEventData eventData){
-
-    // }
-
     //object 드래그하기 시작할 때 1회 호출(IBeginDragHandler)
     public void OnBeginDrag(PointerEventData eventData){
         // 드래그 직전에 소속되어 있던 부모 Transform 정보 저장
@@ -95,13 +81,4 @@ public class blockController : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         transform.SetParent(previousParent);
         rect.position = previousParent.GetComponent<RectTransform>().position;
     }
-
-
-    // //object 드래그 종료할 때 1회 호출(IDropHandler)
-    // //해당 함수를 가진 object 위로 다른 object를 drop할 때 1회 호출
-    // public void OnDrop(PointerEventData eventData){
-
-    // }
-
-
 }
